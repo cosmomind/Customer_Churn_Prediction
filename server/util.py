@@ -20,8 +20,9 @@ def get_churn(tv,movie,sub_age,bill,remain_crct,service_failure,download_over_li
     res[7] = tot_usage
     res[8] = is_contract
     res_normalized = scaler.transform([res])
+    print("till here ok")
     
-    return  model.predict(res_normalized)[0] 
+    return  int(model.predict(res_normalized)[0])
       
 
 

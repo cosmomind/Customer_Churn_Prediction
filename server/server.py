@@ -7,18 +7,23 @@ CORS(app)
 
 
 @app.route('/predict_churn',methods =['GET','POST'])
-def predict_home_price(): 
+def predict_churn(): 
     try:  
         
-        tv = int(request.form['is_tv_subscriber'])
-        movie = int(request.form['is_movie_package_subscriber'])
-        age = float(request.form['subscription_age'])
-        bill = int(request.form['bill_avg'])
-        contract = float(request.form['remaining_contract'])
-        service = int(request.form['service_failure_count'])
-        download = int(request.form['download_over_limit'])
-        usage = float(request.form['total_usage'])
-        ct = int(request.form['is_contract'])
+       
+
+        tv = int(request.form['tv_name'])
+        movie = int(request.form['movie_name'])
+        age = float(request.form['age'])
+        bill = float(request.form['bill'])
+        contract = float(request.form['contract'])
+        service = int(request.form['service'])
+        download = int(request.form['download'])
+        usage = float(request.form['usage'])
+        ct = int(request.form['ct'])
+
+
+        print(usage)
        
        
         response = jsonify({
